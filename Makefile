@@ -66,8 +66,11 @@ fclean: clean
 run_doom: all
 	./cub3D src/maps/doom.cub
 
-run_wolf: all
-	./cub3D src/maps/wolf.cub
+run_colors: all
+	./cub3D src/maps/colors.cub
+
+run_room: all
+	./cub3D src/maps/room.cub
 
 run_anime: all
 	./cub3D src/maps/anime.cub
