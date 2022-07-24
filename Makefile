@@ -63,9 +63,6 @@ fclean: clean
 	make clean -s -C $(MLXDIR)
 	make fclean -s -C ./src/libftv2/
 
-run_doom: all
-	./cub3D src/maps/doom.cub
-
 run_colors: all
 	./cub3D src/maps/colors.cub
 

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   env.c                                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: majacqua <majacqua@student.21-school.ru    +#+  +:+       +#+        */
+/*   By: rtwitch <rtwitch@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/06 16:37:51 by majacqua          #+#    #+#             */
-/*   Updated: 2022/06/20 12:52:55 by majacqua         ###   ########.fr       */
+/*   Updated: 2022/07/24 16:40:23 by rtwitch          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@ t_map	*init_map(void)
 {
 	t_map	*map;
 
-	map = ft_zalloc(sizeof(t_map));	// выделяем память, если не выделилась, то внутри обработка
+	map = ft_zalloc(sizeof(t_map));// выделяем память, если не выделилась, то внутри обработка
 	map->no_path = NULL;
 	map->so_path = NULL;
 	map->we_path = NULL;
@@ -43,11 +43,11 @@ float	get_angle(char ch)
 	return (0);
 }
 
-t_vect create_player(t_map *map, t_env *env)
+t_vect	create_player(t_map *map, t_env *env)
 {
-	t_vect player;
-	unsigned int i;
-	unsigned int j;
+	t_vect			player;
+	unsigned int	i;
+	unsigned int	j;
 
 	i = 0;
 	player.x = -1;
@@ -60,10 +60,10 @@ t_vect create_player(t_map *map, t_env *env)
 				err_exit("Error!/n Two players on the map");
 			if (ft_strchr("SNWE", map->grid[i][j]))
 			{
-				player.y = i * env->size + env->size / 2; // позиция игрока сразу в координатах
+				player.y = i * env->size + env->size / 2;// позиция игрока сразу в координатах
 				player.x = j * env->size + env->size / 2;
-				player.angle = get_angle(map->grid[i][j]); // узнать в какую сторон смотрит игрок изначально
-				printf("[%c][%f][%f] Ang - %f\n", map->grid[i][j], player.x, player.y, player.angle); // DEL
+				player.angle = get_angle(map->grid[i][j]);// узнать в какую сторон смотрит игрок изначально
+				printf("[%c][%f][%f] Ang - %f\n", map->grid[i][j], player.x, player.y, player.angle);// DEL
 				map->grid[i][j] = '0'; // Обнуляем позицию
 			}
 			j++;
@@ -72,15 +72,15 @@ t_vect create_player(t_map *map, t_env *env)
 	}
 	if (player.x == -1)
 		err_exit("Error!/n No player's position on the map");
-	print_player(player); // DEL
+	print_player(player);// DEL
 	return (player);
 }
 
 // DELETE
 void	print_map(t_map *map)
 {
-	unsigned int i;
-	
+	unsigned int	i;
+
 	printf("no_path -[%s]\n", map->no_path);
 	printf("so_path -[%s]\n", map->so_path);
 	printf("we_path -[%s]\n", map->we_path);

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   hooks.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: majacqua <majacqua@student.21-school.ru    +#+  +:+       +#+        */
+/*   By: rtwitch <rtwitch@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/03 13:52:02 by majacqua          #+#    #+#             */
-/*   Updated: 2022/06/20 12:52:04 by majacqua         ###   ########.fr       */
+/*   Updated: 2022/07/24 16:43:14 by rtwitch          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,9 +31,9 @@ t_vect	make_step(t_env *env, int dir_x, int dir_y)
 	res.angle = env->player.angle; // угол не меняется
 	if (dir_y < 0)
 		res.angle -= PI / 2;
-	res.x = res.dist * cosf(res.angle); // изменение по координате x
-	res.y = res.dist * sinf(res.angle); // изменение по координате y
-	res = vect_add(env->player, res); // складываем вектор игрока с вектором перемещения
+	res.x = res.dist * cosf(res.angle);// изменение по координате x
+	res.y = res.dist * sinf(res.angle);// изменение по координате y
+	res = vect_add(env->player, res);// складываем вектор игрока с вектором перемещения
 	if ((env->map->grid[(int)(res.y / env->size)][(int)(env->player.x \
 		/ env->size)] == '1' && \
 		env->map->grid[(int)(env->player.y / env->size)][(int)(res.x \
@@ -60,12 +60,12 @@ int	key_press(int keycode, t_env *env)
 	if (keycode == E_KEY || keycode == RIGHT_KEY)
 		env->player.angle += ROTATE_ANG;
 	if (keycode == ESC)
-		close_game(env); // закрыть игру
+		close_game(env);// закрыть игру
 	if (env->player.angle > PI * 2) // когда около 360 градусов (реализация поворота вокруг оси)
 			env->player.angle -= PI * 2;
 	if (env->player.angle < 0)
 			env->player.angle += PI * 2;
-	render(env); // Рендер после действия
+	render(env);// Рендер после действия
 	return (0);
 }
 

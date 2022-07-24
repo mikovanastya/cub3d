@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   vector.h                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: majacqua <majacqua@student.21-school.ru    +#+  +:+       +#+        */
+/*   By: rtwitch <rtwitch@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/11 15:17:56 by majacqua          #+#    #+#             */
-/*   Updated: 2022/05/31 19:36:52 by majacqua         ###   ########.fr       */
+/*   Updated: 2022/07/24 16:50:47 by rtwitch          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,6 +32,5 @@ t_vect	vect_mul(t_vect vect, float mul);
 void	vect_norm(t_vect *vect);
 t_vect	vect_rot(t_vect vect, float angle);
 float	vec_scal_prod(float angle, t_vect projected);
-
 
 #endif
