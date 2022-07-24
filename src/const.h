@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   const.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: majacqua <majacqua@student.21-school.ru    +#+  +:+       +#+        */
+/*   By: majacqua <majacqua@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/06 15:13:15 by majacqua          #+#    #+#             */
-/*   Updated: 2022/07/20 12:55:16 by majacqua         ###   ########.fr       */
+/*   Updated: 2022/07/24 18:30:37 by majacqua         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,4 +34,5 @@
 # define TYPE_WE 'W'
 # define TYPE_EA 'E'
 
+# define FOG_ON 1 
 #endif
