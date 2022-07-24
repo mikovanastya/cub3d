@@ -3,7 +3,7 @@ SO ./src/assets/room/so.xpm
 WE ./src/assets/room/we.xpm
 EA ./src/assets/room/ea.xpm
 
-C 255,255,255
+C 155,155,255
 F 0,0,0
 
         1111111111111111111111111
