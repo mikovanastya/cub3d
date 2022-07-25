@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   const.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: majacqua <majacqua@student.42.fr>          +#+  +:+       +#+        */
+/*   By: rtwitch <rtwitch@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/06 15:13:15 by majacqua          #+#    #+#             */
-/*   Updated: 2022/07/25 14:02:31 by majacqua         ###   ########.fr       */
+/*   Updated: 2022/07/25 14:38:53 by rtwitch          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,6 @@
 # define ROTATE_ANG 0.05
 # define PI			3.14159
 
-
 // 60 FOV
 # define FOV	1.0472
 # define VFOV	0.698132
@@ -27,7 +26,6 @@
 // // 75 FOV
 // # define FOV	1.309
 // # define VFOV	0.907571
-
 
 # define TYPE_NO 'N'
 # define TYPE_SO 'S'

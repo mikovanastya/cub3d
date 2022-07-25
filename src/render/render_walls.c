@@ -3,19 +3,20 @@
 /*                                                        :::      ::::::::   */
 /*   render_walls.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: majacqua <majacqua@student.42.fr>          +#+  +:+       +#+        */
+/*   By: rtwitch <rtwitch@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/03 13:34:50 by majacqua          #+#    #+#             */
-/*   Updated: 2022/07/24 18:30:45 by majacqua         ###   ########.fr       */
+/*   Updated: 2022/07/25 14:38:04 by rtwitch          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "render.h"
 
-int get_fog_color(int options, int color, double distance)
+int	get_fog_color(int options, int color, double distance)
 {
 	double fog_grade = distance / 8;
-	if (options) {	
+	if (options)
+	{
 		if (fog_grade <= 1.0)
 			return (color);
 		return (((int)(((0xFF0000 & color) >> 16) / fog_grade) << 16)
@@ -74,7 +75,7 @@ void	put_col_img(t_column *col, t_vect *ray, t_img *img)
 	}
 }
 
-int get_real_wall_type(t_vect **rays, int x_pos)
+int	get_real_wall_type(t_vect **rays, int x_pos)
 {
 	int cur_type = get_wall_type(rays[x_pos]);
 	if ((x_pos > 2) && (x_pos < RES_X - 1)) {
