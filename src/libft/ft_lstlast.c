@@ -1,22 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   error.c                                            :+:      :+:    :+:   */
+/*   ft_lstlast.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: majacqua <majacqua@student.42.fr>          +#+  +:+       +#+        */
+/*   By: tyamcha <tyamcha@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/05/06 16:17:35 by majacqua          #+#    #+#             */
-/*   Updated: 2022/07/25 13:23:14 by majacqua         ###   ########.fr       */
+/*   Created: 2021/10/06 14:34:30 by tyamcha           #+#    #+#             */
+/*   Updated: 2021/10/13 15:04:30 by tyamcha          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "error.h"
+#include "libft.h"
 
-int	err_exit(char *text)
+t_list	*ft_lstlast(t_list *lst)
 {
-	ft_putstr_fd("Error! Cub3D: ", 2);
-	ft_putstr_fd(text, 2);
-	ft_putstr_fd("\n", 2);
-	ft_free();
-	exit(1);
+	if (!lst)
+		return (NULL);
+	while (lst->next != NULL)
+		lst = lst->next;
+	return (lst);
 }

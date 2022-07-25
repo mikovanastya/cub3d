@@ -1,22 +1,20 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   error.c                                            :+:      :+:    :+:   */
+/*   ft_strlen.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: majacqua <majacqua@student.42.fr>          +#+  +:+       +#+        */
+/*   By: tyamcha <tyamcha@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/05/06 16:17:35 by majacqua          #+#    #+#             */
-/*   Updated: 2022/07/25 13:23:14 by majacqua         ###   ########.fr       */
+/*   Created: 2021/10/06 14:34:30 by tyamcha           #+#    #+#             */
+/*   Updated: 2021/10/06 16:20:02 by tyamcha          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "error.h"
+#include "libft.h"
 
-int	err_exit(char *text)
+int	ft_tolower(int c)
 {
-	ft_putstr_fd("Error! Cub3D: ", 2);
-	ft_putstr_fd(text, 2);
-	ft_putstr_fd("\n", 2);
-	ft_free();
-	exit(1);
+	if (c >= 'A' && 'Z' >= c)
+		return (c + 32);
+	return (c);
 }

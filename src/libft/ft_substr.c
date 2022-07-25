@@ -1,22 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   error.c                                            :+:      :+:    :+:   */
+/*   ft_substr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: majacqua <majacqua@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/05/06 16:17:35 by majacqua          #+#    #+#             */
-/*   Updated: 2022/07/25 13:23:14 by majacqua         ###   ########.fr       */
+/*   Created: 2021/10/06 14:34:30 by tyamcha           #+#    #+#             */
+/*   Updated: 2022/07/25 13:43:33 by majacqua         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "error.h"
+#include "libft.h"
 
-int	err_exit(char *text)
+char	*ft_substr(char const *s, unsigned int start, size_t len)
 {
-	ft_putstr_fd("Error! Cub3D: ", 2);
-	ft_putstr_fd(text, 2);
-	ft_putstr_fd("\n", 2);
-	ft_free();
-	exit(1);
+	char	*res;
+
+	if (!s)
+		return (NULL);
+	if ((unsigned int)ft_strlen(s) < start)
+		return (ft_strdup(""));
+	if (ft_strlen(s + start) < len++)
+		len = ft_strlen(s + start) + 1;
+	res = (char *)ft_zalloc(sizeof(char) * (len));
+	if (!res)
+		return (NULL);
+	ft_strlcpy(res, s + start, len);
+	return (res);
 }

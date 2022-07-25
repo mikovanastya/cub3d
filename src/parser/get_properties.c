@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   get_properties.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: majacqua <majacqua@student.21-school.ru    +#+  +:+       +#+        */
+/*   By: majacqua <majacqua@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/10 14:43:12 by majacqua          #+#    #+#             */
-/*   Updated: 2022/06/16 14:33:29 by majacqua         ###   ########.fr       */
+/*   Updated: 2022/07/25 14:18:53 by majacqua         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,7 +46,7 @@ int get_color(char *str)
 
 void add_property(t_map *map, char **prop)
 {
-	if (!prop || !prop[0] || !prop[1])
+	if (!prop || !prop[0] || !prop[1] || prop[2])
 		err_exit("Error!\nWrong properties input");
 	printf("prop:[%s][%s]\n", prop[0], prop[1]);
 	if (ft_strlen(prop[0]) == 2 && ft_strncmp(prop[0], "NO", 2) == 0)

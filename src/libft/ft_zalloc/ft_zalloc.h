@@ -1,22 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   error.c                                            :+:      :+:    :+:   */
+/*   ft_zalloc.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: majacqua <majacqua@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/05/06 16:17:35 by majacqua          #+#    #+#             */
-/*   Updated: 2022/07/25 13:23:14 by majacqua         ###   ########.fr       */
+/*   Created: 2022/07/25 13:44:02 by majacqua          #+#    #+#             */
+/*   Updated: 2022/07/25 13:44:03 by majacqua         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "error.h"
 
-int	err_exit(char *text)
+#ifndef FT_MALLOC_H
+# define FT_MALLOC_H
+
+# include "../libft.h"
+
+typedef struct s_heap
 {
-	ft_putstr_fd("Error! Cub3D: ", 2);
-	ft_putstr_fd(text, 2);
-	ft_putstr_fd("\n", 2);
-	ft_free();
-	exit(1);
-}
+	void	**mem;
+	size_t	count;
+}	t_heap;
+
+t_heap	g_heap;
+
+void	*ft_zalloc(size_t size);
+void	ft_free(void);
+
+#endif
