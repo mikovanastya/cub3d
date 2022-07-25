@@ -1,22 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   error.c                                            :+:      :+:    :+:   */
+/*   ft_isprint.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: majacqua <majacqua@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/05/06 16:17:35 by majacqua          #+#    #+#             */
-/*   Updated: 2022/07/25 13:23:14 by majacqua         ###   ########.fr       */
+/*   Created: 2021/10/06 14:34:30 by tyamcha           #+#    #+#             */
+/*   Updated: 2022/07/25 14:26:32 by majacqua         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "error.h"
-
-int	err_exit(char *text)
+int	ft_isprint(int ch)
 {
-	ft_putstr_fd("Error! Cub3D: ", 2);
-	ft_putstr_fd(text, 2);
-	ft_putstr_fd("\n", 2);
-	ft_free();
-	exit(1);
+	if ((ch >= 32 && ch <= 126))
+		return (1);
+	return (0);
 }

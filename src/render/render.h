@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   render.h                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: majacqua <majacqua@student.21-school.ru    +#+  +:+       +#+        */
+/*   By: majacqua <majacqua@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/11 11:54:34 by majacqua          #+#    #+#             */
-/*   Updated: 2022/06/20 13:37:55 by majacqua         ###   ########.fr       */
+/*   Updated: 2022/07/25 13:08:10 by majacqua         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@
 # include "../env/env.h"
 # include "../vector/vector.h"
 
-# include "../libftv2/libftv2.h"
+# include "../libft/libft.h"
 # include "../minilibx/mlx.h"
 
 typedef struct s_img	t_img;

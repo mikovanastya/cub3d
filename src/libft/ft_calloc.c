@@ -1,22 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   error.c                                            :+:      :+:    :+:   */
+/*   ft_calloc.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: majacqua <majacqua@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/05/06 16:17:35 by majacqua          #+#    #+#             */
-/*   Updated: 2022/07/25 13:23:14 by majacqua         ###   ########.fr       */
+/*   Created: 2021/10/06 14:34:30 by tyamcha           #+#    #+#             */
+/*   Updated: 2022/07/25 13:43:33 by majacqua         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "error.h"
+#include "libft.h"
 
-int	err_exit(char *text)
+void	*ft_calloc(size_t count, size_t size)
 {
-	ft_putstr_fd("Error! Cub3D: ", 2);
-	ft_putstr_fd(text, 2);
-	ft_putstr_fd("\n", 2);
-	ft_free();
-	exit(1);
+	void		*addr;
+
+	addr = ft_zalloc(count * size);
+	if (addr)
+		ft_memset(addr, 0, count * size);
+	return (addr);
 }
