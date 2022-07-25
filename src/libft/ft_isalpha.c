@@ -3,16 +3,18 @@
 /*                                                        :::      ::::::::   */
 /*   ft_isalpha.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: tyamcha <tyamcha@student.42.fr>            +#+  +:+       +#+        */
+/*   By: majacqua <majacqua@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/06 14:34:30 by tyamcha           #+#    #+#             */
-/*   Updated: 2021/10/06 15:23:03 by tyamcha          ###   ########.fr       */
+/*   Updated: 2022/07/25 14:25:46 by majacqua         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "libft.h"
+
 int	ft_isalpha(int ch)
 {
-	if ((ch > 64 && ch < 91) || (ch > 96 && ch < 123))
+	if ((ch >= 65 && ch <= 90) || (ch >= 97 && ch <= 122))
 		return (1);
 	return (0);
 }
