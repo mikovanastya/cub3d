@@ -6,7 +6,7 @@
 /*   By: rtwitch <rtwitch@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/03 15:51:25 by majacqua          #+#    #+#             */
-/*   Updated: 2022/07/25 14:37:33 by rtwitch          ###   ########.fr       */
+/*   Updated: 2022/07/27 14:14:52 by rtwitch          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -69,7 +69,7 @@ float	get_scale_minimap(t_env *env)
 		max_width = (int)floorf(RES_X * MINI_MAP_W / 2);
 	while (max_width % env->map->width != 0)
 		max_width--;
-	return ((float)max_width / (float)RES_X); // масштаб миникарты
+	return ((float)max_width / (float)RES_X);// масштаб миникарты
 }
 
 void	render_minimap(t_env *env, t_img *img)
@@ -80,7 +80,7 @@ void	render_minimap(t_env *env, t_img *img)
 	size_t	j;
 
 	i = 0;
-	scale = get_scale_minimap(env);	// получить масштаб миникарты
+	scale = get_scale_minimap(env);// получить масштаб миникарты
 	while (i < env->map->height)
 	{
 		j = 0;
@@ -88,13 +88,13 @@ void	render_minimap(t_env *env, t_img *img)
 		{
 			rec.x = (int)(j * env->size * scale);
 			rec.y = (int)(i * env->size * scale);
-			rec.width = (int)(rec.x + env->size * scale);	// размер миникарты по ширине
-			rec.height = (int)(rec.y + env->size * scale);	// по высоте
-			if (!ft_strchr("1 ", env->map->grid[i][j]))		// если, не граница, то рисуем
-				draw_rec(img, &rec);	// нарисовать прямоугольник
+			rec.width = (int)(rec.x + env->size * scale);// размер миникарты по ширине
+			rec.height = (int)(rec.y + env->size * scale);// по высоте
+			if (!ft_strchr("1 ", env->map->grid[i][j]))// если, не граница, то рисуем
+				draw_rec(img, &rec);// нарисовать прямоугольник
 			j++;
 		}
 		i++;
 	}
-	render_player(env, img, scale);	// нарисовать положение игрока
+	render_player(env, img, scale);// нарисовать положение игрока
 }

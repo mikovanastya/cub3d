@@ -3,8 +3,8 @@ SO ./src/assets/anime/so.xpm
 WE ./src/assets/anime/we.xpm
 EA ./src/assets/anime/ea.xpm
 
-F 255,216,0
-C 0,87,184
+C 152,111,158
+F 77,75,158
 
 111111111111111
 1000011110000011111

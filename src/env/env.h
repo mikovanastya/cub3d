@@ -3,15 +3,15 @@
 /*                                                        :::      ::::::::   */
 /*   env.h                                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: majacqua <majacqua@student.42.fr>          +#+  +:+       +#+        */
+/*   By: rtwitch <rtwitch@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/06 16:25:32 by majacqua          #+#    #+#             */
-/*   Updated: 2022/07/25 13:07:52 by majacqua         ###   ########.fr       */
+/*   Updated: 2022/07/27 14:03:51 by rtwitch          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef ENV_H
-#define ENV_H
+# define ENV_H
 
 # include <stdlib.h>
 # include <unistd.h>
@@ -53,7 +53,4 @@ typedef struct s_env
 
 t_map	*init_map(void);
 t_vect	create_player(t_map *map, t_env *env);
-void	print_map(t_map *map); // DELETE
-void	print_player(t_vect player); // DELETE
-void	print_vector(t_vect vect, char *str); // DELETE
 #endif

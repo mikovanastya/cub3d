@@ -6,7 +6,7 @@
 /*   By: rtwitch <rtwitch@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/06 18:03:50 by majacqua          #+#    #+#             */
-/*   Updated: 2022/07/25 14:35:32 by rtwitch          ###   ########.fr       */
+/*   Updated: 2022/07/27 14:06:34 by rtwitch          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,18 +38,16 @@ void	get_grid(t_map *map, int fd)
 	unsigned int	j;
 
 	i = 0;
-	map->grid = ft_zalloc(sizeof(char *) * map->height + 1);
+	map->grid = ft_zalloc(sizeof(char *) * map->height + 1);// получаем строку поля
 	while (i < map->height)
 	{
-		map->grid[i] = get_grid_line(map, ft_strtrim(ft_get_next_line(fd), "\n")); // получаем строку поля
+		map->grid[i] = get_grid_line(map, \
+				ft_strtrim(ft_get_next_line(fd), "\n"));
 		j = 0;
 		while (map->grid[i][j])
 		{
-			if (!ft_strchr(" 01SNWE", map->grid[i][j])) // если неправильный символ в поле
-			{
-				printf("_+%d+_", j);
-				err_exit("Error!\nWrong symbols in grid");
-			}
+			if (!ft_strchr(" 01SNWE", map->grid[i][j]))
+				err_exit("Error!\nWrong symbols in grid");// если неправильный символ в поле
 			j++;
 		}
 		i++;
@@ -64,11 +62,11 @@ int	check_neighbors(t_map *map, unsigned int i, unsigned int j)
 	if (i == map->height - 1 || j == map->width - 1)
 		if (ft_strchr("0SNWE", map->grid[i][j]))
 			return (1);
-	if (!ft_strchr("01SNWE", map->grid[i-1][j]) ||
-		!ft_strchr("01SNWE", map->grid[i+1][j]) || 
-		!ft_strchr("01SNWE", map->grid[i][j-1]) ||
-		!ft_strchr("01SNWE", map->grid[i][j+1]))
-			return (1);
+	if (!ft_strchr("01SNWE", map->grid[i - 1][j]) ||
+		!ft_strchr("01SNWE", map->grid[i + 1][j]) ||
+		!ft_strchr("01SNWE", map->grid[i][j - 1]) ||
+		!ft_strchr("01SNWE", map->grid[i][j + 1]))
+		return (1);
 	return (0);
 }
 
@@ -83,13 +81,10 @@ void	check_grid_borders(t_map *map)
 		j = 0;
 		while (j < ft_strlen(map->grid[i]))
 		{
-			if (ft_strchr("0SNWE", map->grid[i][j])) 
+			if (ft_strchr("0SNWE", map->grid[i][j]))
 			{
-				if (check_neighbors(map, i, j)) // проверка соседних клеток
-				{
-					printf("Err at [%zu:%zu] symb{%s}\n", i, j, map->grid[i]);
-					err_exit("Error!\nBad borders");
-				}
+				if (check_neighbors(map, i, j))
+					err_exit("Error!\nBad borders");// проверка соседних клеток
 			}
 			j++;
 		}
@@ -102,24 +97,6 @@ void	skip_unuseful_lines(t_map *map, int fd)
 	int	i;
 
 	i = 0;
-	while (i++ < map->num_start_grid) // скипаем до поля
+	while (i++ < map->num_start_grid)// скипаем до поля
 		ft_get_next_line(fd);
-}
-
-t_map	*get_map(char *filename)
-{
-	t_map	*map;
-	int		fd;
-
-	map = init_map();	// инициализации карты
-	fd = open(filename, O_RDONLY);
-	get_properties(map, fd); // получение данных
-	close(fd);
-	fd = open(filename, O_RDONLY);
-	skip_unuseful_lines(map, fd);
-	get_grid(map, fd);	// получение поля
-	close(fd);
-	check_grid_borders(map); // проверка границ поля
-	check_assets_path(map);	// проверка путей ассетов
-	return (map);
 }

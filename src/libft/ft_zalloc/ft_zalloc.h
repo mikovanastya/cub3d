@@ -3,16 +3,15 @@
 /*                                                        :::      ::::::::   */
 /*   ft_zalloc.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: majacqua <majacqua@student.42.fr>          +#+  +:+       +#+        */
+/*   By: rtwitch <rtwitch@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/25 13:44:02 by majacqua          #+#    #+#             */
-/*   Updated: 2022/07/25 13:44:03 by majacqua         ###   ########.fr       */
+/*   Updated: 2022/07/25 15:30:56 by rtwitch          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-
-#ifndef FT_MALLOC_H
-# define FT_MALLOC_H
+#ifndef FT_ZALLOC_H
+# define FT_ZALLOC_H
 
 # include "../libft.h"
 

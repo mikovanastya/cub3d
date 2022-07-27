@@ -6,7 +6,7 @@
 /*   By: rtwitch <rtwitch@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/11 11:54:34 by majacqua          #+#    #+#             */
-/*   Updated: 2022/07/25 14:38:19 by rtwitch          ###   ########.fr       */
+/*   Updated: 2022/07/25 16:44:09 by rtwitch          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -66,6 +66,7 @@ void	free_img(void *mlx, t_img *img);
 void	render_walls(t_env *env, t_vect **rays, t_img *img);
 void	put_pixel(t_img *img, int x, int y, int x_pos);
 int		get_pixel(t_img *img, int x, int y);
+int		get_fog_color(int options, int color, double distance);
 
 // MINIMAP
 

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   hooks.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: majacqua <majacqua@student.42.fr>          +#+  +:+       +#+        */
+/*   By: rtwitch <rtwitch@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/03 13:52:02 by majacqua          #+#    #+#             */
-/*   Updated: 2022/07/25 12:37:44 by majacqua         ###   ########.fr       */
+/*   Updated: 2022/07/27 14:05:08 by rtwitch          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,14 +40,13 @@ t_vect	make_step(t_env *env, int dir_x, int dir_y)
 		/ env->size)] == '1') ||
 		(env->map->grid[(int)(res.y / env->size)][(int)(res.x \
 		/ env->size)] == '1'))
-		return (env->player); // Коллизия
+		return (env->player);
 	return (res);
 }
 
 int	key_press(int keycode, t_env *env)
 {
-	// printf("Angle - [%f] Position - [%fx%f] Dist= \n", env->player.angle, env->player.x, env->player.y);
-	if (keycode == W_KEY || keycode == UP_KEY) // шаги
+	if (keycode == W_KEY || keycode == UP_KEY)
 		env->player = make_step(env, -1, 1);
 	if (keycode == S_KEY || keycode == DOWN_KEY)
 		env->player = make_step(env, 1, 1);
@@ -55,22 +54,22 @@ int	key_press(int keycode, t_env *env)
 		env->player = make_step(env, -1, -1);
 	if (keycode == D_KEY)
 		env->player = make_step(env, 1, -1);
-	if (keycode == Q_KEY || keycode == LEFT_KEY) // повороты
+	if (keycode == Q_KEY || keycode == LEFT_KEY)// повороты
 		env->player.angle -= ROTATE_ANG;
 	if (keycode == E_KEY || keycode == RIGHT_KEY)
 		env->player.angle += ROTATE_ANG;
 	if (keycode == ESC)
-		close_game(env); // закрыть игру
-	if (env->player.angle > PI * 2) // когда около 360 градусов (реализация поворота вокруг оси)
+		close_game(env);// закрыть игру
+	if (env->player.angle > PI * 2)// когда около 360 градусов (реализация поворота вокруг оси)
 			env->player.angle -= PI * 2;
 	if (env->player.angle < 0)
 			env->player.angle += PI * 2;
-	render(env); // Рендер после действия
+	render(env);
 	return (0);
 }
 
 void	set_hooks(t_env *env)
 {
-	mlx_hook(env->win, KEYHOLD, 1L << 0, key_press, env); // нажатие на клавишу
-	mlx_hook(env->win, CLOSE_WIND, 1L << 0, close_game, env);	// закрыть окно
+	mlx_hook(env->win, KEYHOLD, 1L << 0, key_press, env);// нажатие на клавишу
+	mlx_hook(env->win, CLOSE_WIND, 1L << 0, close_game, env);// закрыть окно
 }
