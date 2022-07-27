@@ -14,7 +14,7 @@
 
 int	get_fog_color(int options, int color, double distance)
 {
-	double fog_grade = distance / 8;
+	double fog_grade = distance / FOG_GRADE;
 	if (options)
 	{
 		if (fog_grade <= 1.0)

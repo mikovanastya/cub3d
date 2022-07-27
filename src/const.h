@@ -33,5 +33,6 @@
 # define TYPE_EA 'E'
 
 # define FOG_ON 1
+# define FOG_GRADE 4
 
 #endif

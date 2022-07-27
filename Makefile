@@ -1,6 +1,6 @@
 NAME = cub3D
 
-CC = gcc
+CC = cc
 RM = rm -f
 
 FLAGS = -Wall -Wextra -Werror
